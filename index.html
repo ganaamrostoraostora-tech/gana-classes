@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jana Classes</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:#f7f4ff;
+color:#222;
+}
+
+header{
+background:linear-gradient(135deg,#5420a8,#8b45df);
+color:white;
+padding:20px;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+}
+
+.logo{
+font-size:27px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+max-width:1100px;
+margin:35px auto;
+padding:45px 25px;
+border-radius:25px;
+background:linear-gradient(135deg,#eee4ff,#fff);
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+color:#5420a8;
+margin:0 0 15px;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+}
+
+.btn{
+border:0;
+background:#6c2bd9;
+color:white;
+padding:13px 25px;
+border-radius:12px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.section-title{
+text-align:center;
+color:#5420a8;
+font-size:30px;
+margin:35px 0 20px;
+}
+
+.subjects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:25px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.icon{
+font-size:48px;
+}
+
+.card h3{
+color:#5420a8;
+}
+
+.card button{
+margin-top:10px;
+}
+
+.lessons{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.lesson{
+background:white;
+border-radius:18px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.07);
+}
+
+.lesson h3{
+color:#5420a8;
+}
+
+.lesson p{
+line-height:1.7;
+}
+
+.badge{
+display:inline-block;
+background:#eee4ff;
+color:#5420a8;
+padding:6px 10px;
+border-radius:8px;
+font-size:13px;
+}
+
+.search{
+width:100%;
+padding:15px;
+border:2px solid #ddd;
+border-radius:12px;
+font-size:16px;
+margin-bottom:20px;
+}
+
+.quiz{
+background:white;
+border-radius:20px;
+padding:25px;
+margin-top:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.07);
+}
+
+.question{
+font-size:19px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.option{
+display:block;
+background:#f4f0ff;
+padding:13px;
+margin:10px 0;
+border-radius:10px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#e8dcff;
+}
+
+.result{
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
+color:#5420a8;
+}
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
+
+footer{
+margin-top:60px;
+background:#5420a8;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:700px){
+.nav{
+flex-direction:column;
+}
+nav a{
+font-size:14px;
+}
+.hero h1{
+font-size:32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">🎓 Jana Classes</div>
+
+<nav>
+<a onclick="showPage('home')">الرئيسية</a>
+<a onclick="showPage('subjects')">المواد</a>
+<a onclick="showPage('lessons')">الحصص</a>
+<a onclick="showPage('quiz')">الاختبارات</a>
+</nav>
+</div>
+</header>
+
+
+<!-- الصفحة الرئيسية -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<h1>Jana Classes</h1>
+
+<p>
+منصتك التعليمية الذكية 🎓
+<br>
+اتعلمي، افهمي، وحلي تدريباتك بطريقة سهلة وممتعة.
+</p>
+
+<button class="btn" onclick="showPage('subjects')">
+ابدئي التعلم الآن
+</button>
+
+</div>
+
+<div class="container">
+
+<h2 class="section-title">ماذا ستجدين في Jana Classes؟</h2>
+
+<div class="subjects">
+
+<div class="card">
+<div class="icon">🎥</div>
+<h3>حصص فيديو</h3>
+<p>شاهدي شرح الدروس بطريقة سهلة.</p>
+</div>
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>اختبارات</h3>
+<p>اختبري نفسك بعد كل درس.</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>مذكرات</h3>
+<p>راجعي أهم النقاط والمعلومات.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>تقييم</h3>
+<p>تابعي مستواك وتقدّمك.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- المواد -->
+
+<section id="subjects" class="page">
+
+<div class="container">
+
+<h2 class="section-title">المواد الدراسية 📚</h2>
+
+<input
+class="search"
+id="search"
+placeholder="ابحثي عن مادة..."
+onkeyup="searchSubjects()"
+>
+
+<div class="subjects" id="subjectList">
+
+<div class="card subject">
+<div class="icon">📖</div>
+<h3>اللغة العربية</h3>
+<p>شرح + تدريبات + اختبارات</p>
+<button class="btn" onclick="openSubject('العربي')">دخول المادة</button>
+</div>
+
+<div class="card subject">
+<div class="icon">🇬🇧</div>
+<h3>English</h3>
+<p>Grammar + Vocabulary + Tests</p>
+<button class="btn" onclick="openSubject('English')">دخول المادة</button>
+</div>
+
+<div class="card subject">
+<div class="icon">🧪</div>
+<h3>Science</h3>
+<p>شرح + فيديوهات + تدريبات</p>
+<button class="btn" onclick="openSubject('Science')">دخول المادة</button>
+</div>
+
+<div class="card subject">
+<div class="icon">➗</div>
+<h3>Math</h3>
+<p>شرح + مسائل + اختبارات</p>
+<button class="btn" onclick="openSubject('Math')">دخول المادة</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- الحصص -->
+
+<section id="lessons" class="page">
+
+<div class="container">
+
+<h2 class="section-title">الحصص التعليمية 🎥</h
